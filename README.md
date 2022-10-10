@@ -5,9 +5,19 @@ The goal for this project was to be able to have a script that can take user inp
 
 # Usage:
 ![image](https://user-images.githubusercontent.com/73033647/194947120-ca6e6112-9451-4dc5-a973-3e44352e2eed.png)
-Image above showcases a text based user input 
+
+Image above showcases a text based user input. User should input an amazon scrape command over text by using the following format, .amazon ____ where ____ is the object they would like to find the price off. The bot will find the amazon choice for this product and return its relavent information. If the object is not found/ an irrelavent object is found, then the bot will let the user know of the problem. 
 
 ![image](https://user-images.githubusercontent.com/73033647/194946793-d36947b3-460f-4178-9f99-dcb2cd1ef038.png)
 
-Output displayed to user on Discord. 
+Output displayed to user on Discord in the format of Price in first line. Name of the object found in the second line, and the url being reutrned last. All objects will be instantly added to the users "shopping list". 
 
+
+![image](https://user-images.githubusercontent.com/73033647/194947576-8431b613-86e3-4305-ae42-b331216a509b.png)
+
+User Can direct bot to joining a voice channel by typing .join ____. Where ____ is the channel name the bot should join. In the event that the channel does not exist, the user will be informed of the problem and the bot will not join any channel.
+
+
+![image](https://user-images.githubusercontent.com/73033647/194948093-638247e1-080d-446c-9f14-61b1a4b3681a.png)
+
+A succsesfull invocation of the .join command will result in the bot joining a voice channel as shown, where it will wait for approximately 5 minutes before leaving. 
