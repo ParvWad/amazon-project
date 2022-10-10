@@ -1,4 +1,4 @@
-# amazon-project
+# Amazon-Discord-Project
  
 # Goal: 
 The goal for this project was to be able to have a script that can take user input and then scrape the amazon webage, and then store the data retrived in a csv file.    From there, the project was improved to be hosted on discord instead of a standalone python script. Lastly, the project was updated to work for voice based user input as well as text based user input.
