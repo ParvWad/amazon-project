@@ -13,7 +13,7 @@ Image above showcases a text based user input. User should input an amazon scrap
 Output displayed to user on Discord in the format of Price in first line. Name of the object found in the second line, and the url being reutrned last. All objects will be instantly added to the users "shopping list". 
 
 
-![image](https://user-images.githubusercontent.com/73033647/194947576-8431b613-86e3-4305-ae42-b331216a509b.png)
+![image](https://user-images.githubusercontent.com/73033647/194969288-c02f1f5c-469c-4a71-b269-f188130de3a3.png)
 
 User Can direct bot to joining a voice channel by typing .join ____. Where ____ is the channel name the bot should join. In the event that the channel does not exist, the user will be informed of the problem and the bot will not join any channel.
 
