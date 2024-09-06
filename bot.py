@@ -114,6 +114,44 @@ async def amazon(ctx, *val):
         f = open(user+".txt","a")
         content = val2 +price+ name+ url
         f.write(content+"\n")
+
+@bot.command()
+async def voicecommand(ctx):
+    """Listen for voice commands in a voice channel"""
+    # Ensure the bot and the user are in the same voice channel
+    if ctx.author.voice and ctx.voice_client and ctx.author.voice.channel == ctx.voice_client.channel:
+        await ctx.send("Listening for your voice command...")
+
+        # Use SpeechRecognition to listen to voice input
+        recognizer = sr.Recognizer()
+
+        def listen_to_voice():
+            with sr.Microphone() as source:
+                print("Listening...")
+                audio = recognizer.listen(source)
+
+            try:
+                # Convert speech to text
+                command_text = recognizer.recognize_google(audio)
+                print(f"Recognized command: {command_text}")
+                return command_text
+            except sr.UnknownValueError:
+                return "Sorry, I couldn't understand that."
+            except sr.RequestError:
+                return "Error with the speech recognition service."
+
+        command_text = await asyncio.to_thread(listen_to_voice)
+        await ctx.send(f'You said: "{command_text}"')
+
+        # Handle voice commands (customize as needed)
+        if "amazon" in command_text.lower():
+            await ctx.send("Voice command recognized: Amazon")
+            # Call the .amazon command or logic here (customize as needed)
+            await amazon(ctx, *command_text.split()[1:])  # Assumes "amazon <search>"
+        else:
+            await ctx.send("Voice command not recognized.")
+    else:
+        await ctx.send("Both the bot and the user must be in the same voice channel.")
 @bot.command()
 async def join(ctx,val):
     channel = discord.utils.get(ctx.message.guild.voice_channels, name = val)
